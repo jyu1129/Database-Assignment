@@ -67,8 +67,8 @@ create table Fine(
 
 create table Payment(
     payment_no varchar(5),
-    amount number(3),
-    account_no varchar(6,2),
+    amount number(3,2),
+    account_no varchar(6),
 
     primary key(payment_no),
     foreign key(account_no) references Account(account_no)
