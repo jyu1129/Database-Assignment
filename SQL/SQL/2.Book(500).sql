@@ -1,6 +1,6 @@
 create table Book(
     book_id varchar(9),
-    book_title varchar(50),
+    book_title varchar(100),
     language varchar(20),
     author varchar(50),
     publisher varchar(50),
