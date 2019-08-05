@@ -53,16 +53,18 @@ create table Fine(
     fine_no varchar(5),
     day_count number(2),
     fine_amount number(6,2),
-    account_no varchar(6),
+    reserve_no varchar(5),
     payment_status char(1),
     primary key(fine_no),
-    foreign key(account_no) references Account(account_no)
+    foreign key(reserve_no) references Reserve(reserve_no)
 );
 
 create table Payment(
     payment_no varchar(5),
     amount number(3,2),
     account_no varchar(6),
+    report_no varchar(6),
     primary key(payment_no),
-    foreign key(account_no) references Account(account_no)
+    foreign key(account_no) references Account(account_no),
+    foreign key(report_no) references Report(report_no)
 );
