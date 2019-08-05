@@ -1,15 +1,3 @@
-create table Book(
-    book_id varchar(9),
-    book_title varchar(100),
-    language varchar(20),
-    author varchar(50),
-    publisher varchar(50),
-    isbn varchar(13),
-    publish_year number(4),
-
-    primary key(book_id)
-);
-
 insert into Book (language, book_id, book_title, author, publisher, isbn, publish_year) values ('Tamil', 'TANF85362', 'Advanced Natural Gas Engineering', 'Ciro Tomaselli', 'Gulf Publishing Company', 9781933762388, 2010);
 insert into Book (language, book_id, book_title, author, publisher, isbn, publish_year) values ('Korean', 'KOF81137', 'Coding and Decoding: Seismic Data', 'Jonas Detheridge', 'Pergamon', 9780080451596, 2010);
 insert into Book (language, book_id, book_title, author, publisher, isbn, publish_year) values ('Malay', 'MSNF50104', 'Pressure Transient Formation and Well Testing: Convolution Deconvolution and Nonlinear Estimation', 'Stephine Andrzejowski', 'Elsevier', 9780444529534, 2010);

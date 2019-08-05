@@ -1,14 +1,3 @@
-create table Loan(
-    reserve_no varchar(5),
-    book_id varchar(9),
-    collection_date date,
-    return_date date,
-
-    primary key(reserve_no, book_id),
-    foreign key(reserve_no) references Reserve(reserve_no),
-    foreign key(book_id) references Book(book_id)
-);
-
 insert into Loan (reserve_no, book_id, collection_date, return_date) values ('R0001', 'TAF40665', to_date('17/02/2019', 'DD-MM-YYYY'), to_date('17/03/2019', 'DD-MM-YYYY'));
 insert into Loan (reserve_no, book_id, collection_date, return_date) values ('R0002', 'KOF03845', to_date('10/02/2019', 'DD-MM-YYYY'), to_date('10/03/2019', 'DD-MM-YYYY'));
 insert into Loan (reserve_no, book_id, collection_date, return_date) values ('R0003', 'JPNF56655', to_date('08/02/2019', 'DD-MM-YYYY'), to_date('08/03/2019', 'DD-MM-YYYY'));

@@ -1,12 +1,3 @@
-create table Payment(
-    payment_no varchar(5),
-    amount number(3),
-    account_no varchar(6,2),
-
-    primary key(payment_no),
-    foreign key(account_no) references Account(account_no)
-);
-
 insert into Payment (payment_no, amount, account_no) values ('P0001', 4, '000014');
 insert into Payment (payment_no, amount, account_no) values ('P0002', 3, '000015');
 insert into Payment (payment_no, amount, account_no) values ('P0003', 4, '000006');

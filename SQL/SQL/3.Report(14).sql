@@ -1,10 +1,3 @@
-create table report(
-    report_no varchar(6) not null,
-    date_created Date,
-
-    primary key(report_no)
-);
-
 insert into Report (report_no, date_created) values ('BR0256', to_date('31/01/2019', 'DD-MM-YYYY'));
 insert into Report (report_no, date_created) values ('PR0256', to_date('31/01/2019', 'DD-MM-YYYY'));
 insert into Report (report_no, date_created) values ('BR0257', to_date('28/02/2019', 'DD-MM-YYYY'));
