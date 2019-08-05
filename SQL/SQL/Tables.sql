@@ -7,7 +7,6 @@ create table Account(
   identity varchar(16),
   date_Joined Date,
   fine_due number(6,2),
-
   primary key(account_no) 
 );
 
@@ -19,14 +18,12 @@ create table Book(
     publisher varchar(50),
     isbn varchar(13),
     publish_year number(4),
-
     primary key(book_id)
 );
 
 create table report(
     report_no varchar(6) not null,
     date_created Date,
-
     primary key(report_no)
 );
 
@@ -36,7 +33,6 @@ create table Reserve(
     book_id varchar(9),
     account_no varchar(6),
     report_no varchar(6),
-
     primary key(reserve_no),
     foreign key(book_id) references Book(book_id),
     foreign key(account_no) references Account(account_no),
@@ -48,7 +44,6 @@ create table Loan(
     book_id varchar(9),
     collection_date date,
     return_date date,
-
     primary key(reserve_no, book_id),
     foreign key(reserve_no) references Reserve(reserve_no),
     foreign key(book_id) references Book(book_id)
@@ -60,7 +55,6 @@ create table Fine(
     fine_amount number(6,2),
     account_no varchar(6),
     payment_status char(1),
-
     primary key(fine_no),
     foreign key(account_no) references Account(account_no)
 );
@@ -69,7 +63,6 @@ create table Payment(
     payment_no varchar(5),
     amount number(3,2),
     account_no varchar(6),
-
     primary key(payment_no),
     foreign key(account_no) references Account(account_no)
 );
