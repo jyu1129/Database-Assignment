@@ -3,7 +3,7 @@ set pagesize 50;
 column payment_no heading "Payment No.";
 column amount heading "Amount";
 column account_no heading "Account No.";
-column amount format $9,999.90;
+column amount format $9,990.90;
 column payment_no format A11;
 column account_no format A11;
 set underline =;

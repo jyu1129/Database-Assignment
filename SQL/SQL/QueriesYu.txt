@@ -1,0 +1,40 @@
+Show daily summary of payment details using report ID
+========================================================================
+select p.payment_no, p.amount, p.account_no, r.report_no, r.date_created
+from payment p, report r
+where p.report_no = r.report_no and
+r.report_no = '&report_no';
+
+Show the book reserved by using account no.
+=====================================================================================================
+select a.account_no, a.first_name, a.last_name, r.reserve_no, r.reserve_date, b.book_id, b.book_title
+from reserve r, loan l, book b, account a
+where b.book_id=l.book_id and
+l.reserve_no = r.reserve_no and
+r.account_no = a.account_no and
+a.account_no = '&Account_No';
+
+Show return date by reserve no.
+===============================
+select r.reserve_no, l.book_id, l.return_date
+from loan l, reserve r
+where l.reserve_no = r.reserve_no and
+r.reserve_no = '&reserve_no';
+
+Show number of book reservation of the report
+=============================================
+select count(*) as "Reservation Quantity" 
+from reserve
+where report_no = '&report_no';
+
+List out books by each language
+===============================
+break on language;
+select * from book
+order by language;
+
+List out number of books by each year
+===========================
+select count(publish_year) as "Publish Year Quantity", publish_year 
+from book
+group by publish_year order by publish_year;
