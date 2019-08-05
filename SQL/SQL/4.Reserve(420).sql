@@ -1,16 +1,3 @@
-create table Reserve(
-    reserve_no varchar(5) not null,
-    reserve_date date,
-    book_id varchar(9),
-    account_no varchar(6),
-    report_no varchar(6),
-
-    primary key(reserve_no),
-    foreign key(book_id) references Book(book_id),
-    foreign key(account_no) references Account(account_no),
-    foreign key(report_no) references Report(report_no)
-);
-
 insert into Reserve (reserve_no, reserve_date, book_id, account_no, report_no) values ('R0001', to_date('02/01/2018', 'DD-MM-YYYY'), 'JPNF52758', '000008', 'BR0256');
 insert into Reserve (reserve_no, reserve_date, book_id, account_no, report_no) values ('R0002', to_date('20/01/2018', 'DD-MM-YYYY'), 'TAF48477', '000017', 'BR0256');
 insert into Reserve (reserve_no, reserve_date, book_id, account_no, report_no) values ('R0003', to_date('29/01/2018', 'DD-MM-YYYY'), 'JPNF96273', '000015', 'BR0256');

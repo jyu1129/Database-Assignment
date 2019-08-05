@@ -1,14 +1,3 @@
-create table Fine(
-    fine_no varchar(5),
-    day_count number(2),
-    fine_amount number(6,2),
-    account_no varchar(6),
-    payment_status char(1),
-
-    primary key(fine_no),
-    foreign key(account_no) references Account(account_no)
-);
-
 insert into Fine (fine_no, day_count, fine_amount, account_no, payment_status) values ('F0001', 1, '1', '000004', 'n');
 insert into Fine (fine_no, day_count, fine_amount, account_no, payment_status) values ('F0002', 1, '1', '000018', 'n');
 insert into Fine (fine_no, day_count, fine_amount, account_no, payment_status) values ('F0003', 4, '4', '000014', 'p');

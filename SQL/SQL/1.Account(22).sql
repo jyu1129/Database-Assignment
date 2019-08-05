@@ -1,16 +1,3 @@
-create table Account(
-  account_no varchar(6) NOT NULL,
-  first_name varchar(20),
-  last_name varchar(20),
-  email varchar(30),
-  password varchar(16),
-  identity varchar(16),
-  date_Joined Date,
-  fine_due number(6,2),
-
-  primary key(account_no) 
-);
-
 insert into Account (account_no, first_name, last_name, email, password, identity, date_Joined, fine_due) values ('000001', 'Somerset', 'Leeson', 'sleeson0@cargocollective.com', '48CurL', '271102-79-9932', to_date('18-02-2018', 'DD-MM-YYYY') , 0);
 insert into Account (account_no, first_name, last_name, email, password, identity, date_Joined, fine_due) values ('000002', 'Emmott', 'Jobb', 'ejobb1@discovery.com', 'jO4sZZxha5U', '700223-25-1841',  to_date('11-03-2018', 'DD-MM-YYYY') , 0);
 insert into Account (account_no, first_name, last_name, email, password, identity, date_Joined, fine_due) values ('000003', 'Loise', 'Poor', 'lpoor2@histats.com', 'GzjxDrECFru', '340724-21-8936', to_date('10-04-2018', 'DD-MM-YYYY') , 0);
