@@ -1,4 +1,4 @@
-Show daily summary of payment details using month /
+Show daily summary of payment details using report number / Purpose: 
 ========================================================================
 select p.payment_no, p.amount, p.account_no, r.report_no, r.date_created
 from payment p, report r
@@ -46,3 +46,13 @@ List out number of books by each year /
 select publish_year, count(publish_year) as "Number of Books", to_char(round((count(publish_year)/(select count(*) from book)*100),2),990.99) as "Percentage"
 from book
 group by publish_year order by publish_year;
+
+select f.fine_amount, p.payment_no, f.fine_no, a.account_no
+  
+from payment p, account a, reserve r, fine f
+  
+where f.reserve_no = r.reserve_no and
+  
+r.account_no = a.account_no
+ and 
+a.account_no = p.account_no
