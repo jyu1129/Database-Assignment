@@ -40,3 +40,5 @@ column fine_amount heading "Fine Amount";
 column fine_amount format $9,990.90;
 column payment_status heading "Payment Status";
 column payment_status format A14;
+column report_no heading "Report No.";
+column report_no format A10;
