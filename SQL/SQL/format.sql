@@ -4,7 +4,7 @@ column payment_no heading "Payment No.";
 column amount heading "Amount";
 column account_no heading "Account No.";
 column amount format $9,990.90;
-column payment_no format A11;
+column payment_no format A15;
 column account_no format A11;
 set underline =;
 column first_name heading "First Name";
