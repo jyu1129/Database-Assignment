@@ -20,7 +20,7 @@ Show collection and return date by user id /
 select a.account_no, r.reserve_no, l.book_id, l.collection_date, l.return_date
 from loan l, reserve r, account a
 where l.reserve_no = r.reserve_no and
-r.account_no = a.account_no and
+r.account_no = a.account_no;
 a.account_no = '&account_no';
 
 Show number of book reservation of the report /
@@ -35,16 +35,28 @@ List out books by each language /
 select * from book
 where language = '&language';
 
+=====
+select b.language, count(b.language) as "Number of Books"
+from book b, reserve r
+where r.book_id = b.book_id and
+extract(month from r.reserve_date) = 5
+group by b.language order by language;
+=====
+
+select 
+
 List out number of books by each language
 ========================================
 select language, count(language) as "Number of Books", to_char(round((count(language)/(select count(*) from book)*100),2),990.99) as "Percentage"
 from book
+where publish_year = 2009
 group by language order by language;
 
 List out number of books by each year /
 ===========================
-select publish_year, count(publish_year) as "Number of Books", to_char(round((count(publish_year)/(select count(*) from book)*100),2),990.99) as "Percentage"
+select publish_year, count(language), count(publish_year) as "Number of Books", to_char(round((count(publish_year)/(select count(*) from book)*100),2),990.99) as "Percentage"
 from book
+where publish_year between 2009 and 2011
 group by publish_year order by publish_year;
 
 select f.fine_amount, p.payment_no, f.fine_no, a.account_no

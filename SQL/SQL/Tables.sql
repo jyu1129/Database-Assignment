@@ -18,11 +18,14 @@ create table Book(
     publisher varchar(50),
     isbn varchar(13),
     publish_year number(4),
+    stock_quantity number(2),
     primary key(book_id)
 );
 
 create table report(
     report_no varchar(6) not null,
+    report_type varchar(30),
+    report_title varchar(50),
     date_created Date,
     primary key(report_no)
 );
@@ -33,6 +36,7 @@ create table Reserve(
     book_id varchar(9),
     account_no varchar(6),
     report_no varchar(6),
+    quantity number(2),
     primary key(reserve_no),
     foreign key(book_id) references Book(book_id),
     foreign key(account_no) references Account(account_no),
@@ -55,6 +59,7 @@ create table Fine(
     fine_amount number(6,2),
     reserve_no varchar(5),
     payment_status char(1),
+    report_no varchar(6),
     primary key(fine_no),
     foreign key(reserve_no) references Reserve(reserve_no)
 );
